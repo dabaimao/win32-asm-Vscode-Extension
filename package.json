@@ -1,0 +1,61 @@
+{
+    "name": "x86-64-win32-asm-dev",
+    "displayName": "x86_64 Win32 Assembly Language Develop Assistance(base on masm)",
+    "description": "A win32 assembly language development tool including the syntax highlight,the complentation,the snippet and the debugger.",
+    "version": "0.2.1",
+    "engines": {
+        "vscode": "^1.42.0"
+    },
+    "publisher": "shawnping",
+    "preview": true,
+    "categories": [
+        "Themes","Programming Languages"
+    ],
+    "icon": "https://github.com/dabaimao/Self-pictures/blob/master/win32Icon.png",
+    "activationEvents": [
+        "onLanguage:assembly-language"
+    ],
+    "main": "./src/extension.ts",
+    "contributes": {
+        "themes": [
+            {
+                "label": "A win32 assembly language",
+                "uiTheme": "vs-dark",
+                "path": "./themes/A win32 assembly language-color-theme.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "assembly-language",
+                "extensions": [ ".asm" ],
+                "aliases": ["asm","assembly-language"],
+                "configuration": "./assembly-language-configuration.json"
+            },
+            {
+                "id": "windows-resource-file",
+                "extensions": [ ".rc" ],
+                "aliases": ["rc","windows-resource-file"],
+                "configuration": "./resource-compiler-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "assembly-language",
+                "scopeName": "source.asm",
+                "path": "./syntaxes/asm-tmLanguage.json"
+            },
+            {
+                "language": "windows-resource-file",
+                "scopeName": "source.rc",
+                "path": "./syntaxes/rc-tmLanguage.json"
+            }
+        ],
+        "iconThemes": [
+            {
+                "id": "main",
+                "label": "Main",
+                "path": "./fileicons/main-icon-theme.json"
+            }
+        ]
+    }
+}

@@ -572,7 +572,7 @@
             "name":"constant.other.symbol"
         },
         "customConstVaule":{
-            "match":"(?i)(\\b\\w+\\b)(\\s+(?=\\bequ\\b)|\\s*(?=\\=)){0}" ,
+            "match":"(\\b\\w+\\b)(\\s+(?=\\bequ\\b)|\\s*(?=\\=))",
             "name":"windows.message"
         }
 

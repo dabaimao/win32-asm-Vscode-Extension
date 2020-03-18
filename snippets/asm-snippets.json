@@ -1,0 +1,15 @@
+{
+    "if-else":{
+        "prefix":[".if"],
+        "body":[
+            ".if ${1:CONDITION}",
+                "\t$2",
+            ".elseif ${3:CONDITION}",
+                "\t$4",
+            ".else",
+                "\t$5",
+            ".endif"
+        ],
+        "description": "条件分支语句 .if .else"
+    }
+}

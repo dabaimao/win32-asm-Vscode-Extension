@@ -568,7 +568,7 @@
             "name":"source.sass keyword.control"
         },
         "predefineSymbol": {
-            "match":"\\B(\\@((\\@\\:|fardata\\?)\\B|(B|(Cat|Size|In|Sub)Str|code|CodeSize|Cpu|CurSeg|data|(Data|Word)Size|Date|Environ|F|fardata|File(Cur|Name)|Interface|Line|Model|stack|Time|Version)\\b)|(\\$|\\?)\\B)",
+            "match":"\\B(\\@((\\@\\:|fardata\\?)\\B|(B|(Cat|Size|In|Sub)Str|code|Cpu|CurSeg|data|(Code|Data|Word)Size|Date|Environ|F|fardata|File(Cur|Name)|Interface|Line|Model|stack|Time|Version)\\b)|(\\$|\\?)\\B)",
             "name":"constant.other.symbol"
         },
         "customConstVaule":{

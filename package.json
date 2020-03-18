@@ -15,7 +15,8 @@
     "activationEvents": [
         "onLanguage:assembly-language"
     ],
-    "main": "./src/",
+    "repository": "https://github.com/dabaimao/win32-asm-Vscode-Extension",
+    "main": "./src",
     "contributes": {
         "themes": [
             {
@@ -56,6 +57,14 @@
                 "label": "Main",
                 "path": "./fileicons/main-icon-theme.json"
             }
+        ],
+        "snippets": [
+            {
+                "language": "assembly-language",
+                "path": "./snippets/asm-snippets.json"
+            }
         ]
-    }
+    },
+    "homepage": "https://github.com/dabaimao/win32-asm-Vscode-Extension/blob/master/README.md"
+
 }

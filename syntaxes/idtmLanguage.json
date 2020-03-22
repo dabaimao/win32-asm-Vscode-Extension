@@ -32,24 +32,24 @@
             "name":"register"
         },
         "generalPurposeRegister64":{
-            "match":"(?<!\\.)\\b(?i)(rax|rbx|rcx|rdx|rsi|rdi|rbp|rsp|(r(8|9|10|11|12|13|14|15)))\\b",
+            "match":"(?<!\\.)\\b(?i)(?:rax|rbx|rcx|rdx|rsi|rdi|rbp|rsp|(r(8|9|10|11|12|13|14|15)))\\b",
             "name":"register"
 
         },
         "generalPurposeRegister32":{
-            "match":"(?<!\\.)\\b(?i)(eax|ebx|ecx|edx|esi|edi|ebp|esp|(r(8|9|10|11|12|13|14|15)d))\\b",
+            "match":"(?<!\\.)\\b(?i)(?:eax|ebx|ecx|edx|esi|edi|ebp|esp|(r(8|9|10|11|12|13|14|15)d))\\b",
             "name":"register"
         },
         "generalPurposeRegister16":{
-            "match":"(?<!\\.)\\b(?i)(ax|bx|cx|dx|si|di|bp|sp|(r(8|9|10|11|12|13|14|15)w))\\b",
+            "match":"(?<!\\.)\\b(?i)(?:ax|bx|cx|dx|si|di|bp|sp|(r(8|9|10|11|12|13|14|15)w))\\b",
             "name":"register"
         },
         "generalPurposeRegister8":{
-            "match":"(?<!\\.)\\b(?i)(ah|bh|ch|dh|al|bl|cl|dl|sil|dil|bpl|spl|(r(8|9|10|11|12|13|14|15)l))\\b",
+            "match":"(?<!\\.)\\b(?i)(?:(a|b|c|d|)[hl]|sil|dil|bpl|spl|(r(8|9|10|11|12|13|14|15)l))\\b",
             "name":"register"
         },
         "segmentRegister":{
-            "match":"(?<!\\.)\\b(?i)(cs|ds|ss|es|fs|gs)\\b",
+            "match":"(?<!\\.)\\b(?i)(?:(?:c|d|s|e|f|g)s)\\b",
             "name":"register"
         },
 
@@ -100,15 +100,15 @@
             "name":"instruction"
         },
         "dataTransferInstructions":{
-            "match":"(?<!\\.)\\b(?i)(mov|cmove|cmovz|cmovne|cmovnz|cmova|cmovnbe|cmovae|cmovnb|cmovb|cmovnae|cmovbe|cmovna|cmovg|cmovnle|cmovge|cmovnl|cmovl|cmovnge|cmovle|cmovng|cmovc|cmovnc|cmovo|cmovno|cmovs|cmovns|cmovp|cmovpe|cmovnp|cmovpo|xchg|bswap|xadd|cmpxchg|cmpxchg8b|push|pop|pusha|pushad|popa|popad|cwd|cdq|cbw|cwde|movsx|movzx)\\b",
+            "match":"(?<!\\.)\\b(?i)(?:mov|cmove|cmovz|cmovne|cmovnz|cmova|cmovnbe|cmovae|cmovnb|cmovb|cmovnae|cmovbe|cmovna|cmovg|cmovnle|cmovge|cmovnl|cmovl|cmovnge|cmovle|cmovng|cmovc|cmovnc|cmovo|cmovno|cmovs|cmovns|cmovp|cmovpe|cmovnp|cmovpo|xchg|bswap|xadd|cmpxchg|cmpxchg8b|push|pop|pusha|pushad|popa|popad|cwd|cdq|cbw|cwde|movsx|movzx)\\b",
             "name":"instruction"
         },
         "binaryArthmeticInstructions":{
-            "match":"(?<!\\.)\\b(?i)(adcx|adox|add|adc|sub|sbb|imul|mul|idiv|div|inc|dec|neg|cmp)\\b",
+            "match":"(?<!\\.)\\b(?i)(?:adcx|adox|add|adc|sub|sbb|imul|mul|idiv|div|inc|dec|neg|cmp)\\b",
             "name":"instruction"
         },
         "decimalArithmeticInstructions":{
-            "match":"(?<!\\.)\\b(?i)(daa|das|aaa|aas|aam|aad)\\b",
+            "match":"(?<!\\.)\\b(?i)(?:daa|das|aaa|aas|aam|aad)\\b",
             "name":"instruction"
         },
         "logicalInstructions":{
@@ -448,7 +448,7 @@
         },
 "//24":"INTEL® SOFTWARE GUARD EXTENSIONS",
         "SGX":{
-            "match":"(?<!\\.)\\b(?i)encl(s|u)\\b",
+            "match":"(?<!\\.)\\b(?i)encl[s|u]\\b",
             "name":"instruction"
         },
 "//ML.EXE ":"Pseudocode For MASM",
@@ -478,7 +478,9 @@
                 {"include":"#modelParameter"},
                 {"include":"#optionParameter"},
                 {"include":"#predefineSymbol"},
-                {"include":"#customConstVaule"}
+                {"include":"#predefConst"},
+                {"include":"#test"},
+                {"include":"#immediateOperandDisplayColor"}
             ]
         },
 
@@ -571,10 +573,9 @@
             "match":"\\B(\\@((\\@\\:|fardata\\?)\\B|(B|(Cat|Size|In|Sub)Str|code|Cpu|CurSeg|data|(Code|Data|Word)Size|Date|Environ|F|fardata|File(Cur|Name)|Interface|Line|Model|stack|Time|Version)\\b)|(\\$|\\?)\\B)",
             "name":"constant.other.symbol"
         },
-        "customConstVaule":{
-            "match":"(\\b\\w+\\b)(\\s+(?=\\bequ\\b)|\\s*(?=\\=))",
-            "name":"windows.message"
+        "immediateOperandDisplayColor":{
+            "match":"\\b\\h{4}h\\b",
+            "name":"immediate.operand.hex"
         }
-
     }
 }

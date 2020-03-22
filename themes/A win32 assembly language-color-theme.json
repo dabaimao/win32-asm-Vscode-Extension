@@ -60,6 +60,18 @@
 			}
 		},
 		{
+			"name": "ImmediateOperand",
+			"scope":[
+				"immediate.operand.hex",
+				"immediate.operand.dec",
+				"immediate.operand.bin"
+			],
+			"settings": {
+				"foreground": "#e2980d",
+				"fontStyle": "bold"
+			}
+		},
+		{
 			"name": "Variables",
 			"scope": [
 				"variable",
